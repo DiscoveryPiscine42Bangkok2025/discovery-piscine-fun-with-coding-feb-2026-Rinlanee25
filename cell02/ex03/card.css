@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0035;
+}
+
+.card {
+  width: 300px;
+  background-color: white;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: none;
+  padding: 10px;
+}
+
+.profile {
+  width: 100%;
+}
+
+.login {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.desc {
+  color: gray;
+}
+
+.form {
+  color: rgb(0, 0, 0);
+}
+
+.socials img {
+  width: 20px;
+  margin: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
