@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>It's over 9000</title>
+  </head>
+
+  <body>
+    <!-- input ตัวเลขซ้าย -->
+    <input type="text" id="left">
+
+    <!-- เลือกเครื่องหมาย -->
+    <select id="op">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+
+    <!-- input ตัวเลขขวา -->
+    <input type="text" id="right">
+
+    <!-- ปุ่มคำนวณ -->
+    <input type="submit" value="Try me!" onclick="calculate()">
+
+    <script>
+  function calculate() {
+    let left = document.getElementById("left").value;
+    let right = document.getElementById("right").value;
+    let op = document.getElementById("op").value;
+
+    let a = Number(left);
+    let b = Number(right);
+
+    // ตรวจว่าเป็นจำนวนเต็มบวกไหม
+    if (!Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0) {
+      alert("Error :(");
+      return;
+    }
+
+    // หารด้วย 0
+    if ((op === "/" || op === "%") && b === 0) {
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+
+    let result;
+
+    if (op === "+") result = a + b;
+    else if (op === "-") result = a - b;
+    else if (op === "*") result = a * b;
+    else if (op === "/") result = a / b;
+    else if (op === "%") result = a % b;
+
+    alert(result);
+    console.log(result);
+  }
+
+  // alert ทุก 30 วินาที
+  setInterval(function () {
+    alert("Please, use me...");
+  }, 30000);
+</script>
+  </body>
+</html>
