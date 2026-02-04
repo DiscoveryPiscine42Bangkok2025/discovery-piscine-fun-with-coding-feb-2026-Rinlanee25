@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 {
+  background-image: url("https://www.expedia.co.th/stories/wp-content/uploads/2022/07/1.Hawaii-1.jpg");
+}
+
+.img2 {
+  background-image: url("https://www.printwallpaper.net/wp-content/uploads/2022/02/SEA-002_beautiful-landscape-sea-ocean-with-silhouette-coconut-palm-tree-sunset-sunrise.jpg");
+}
+
+.text {
+  color: white;
+  font-size: 40px;
+}
+
+.block {
+  height: 300px;
+  background-color: black;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
