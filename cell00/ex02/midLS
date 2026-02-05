@@ -1,4 +1,1 @@
-cd ..
-mkdir -p ex02
-cd ex02
-echo "ls -m" > midLS
+ls -m
