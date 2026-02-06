@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>It's over 9000</title>
+  </head>
+
+  <body>
+
+    <!-- ตัวเลขซ้าย -->
+    <input type="text" id="left">
+
+    <!-- เครื่องหมาย -->
+    <select id="op">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+
+    <!-- ตัวเลขขวา -->
+    <input type="text" id="right">
+
+    <!-- ปุ่มคำนวณ -->
+    <button id="try">Try me!</button>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+      // เมื่อหน้าเว็บโหลดเสร็จ
+      $(document).ready(function () {
+
+        // กดปุ่ม Try me!
+        $("#try").click(function () {
+          let a = Number($("#left").val());
+          let b = Number($("#right").val());
+          let op = $("#op").val();
+
+          // ตรวจ input ต้องเป็นจำนวนเต็มบวก
+          if (!Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0) {
+            alert("Error :(");
+            return;
+          }
+
+          // หารหรือ mod ด้วย 0
+          if ((op === "/" || op === "%") && b === 0) {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+            return;
+          }
+
+          let result;
+
+          if (op === "+") result = a + b;
+          else if (op === "-") result = a - b;
+          else if (op === "*") result = a * b;
+          else if (op === "/") result = a / b;
+          else if (op === "%") result = a % b;
+
+          // แสดงผล
+          alert(result);
+          console.log(result);
+        });
+
+        // เตือนทุก 30 วินาที
+        setInterval(function () {
+          alert("Please, use me...");
+        }, 30000);
+      });
+    </script>
+
+  </body>
+</html>
+
