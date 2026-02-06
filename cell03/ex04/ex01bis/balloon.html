@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Balloon</title>
+
     <style>
       #balloon {
         width: 200px;
@@ -15,9 +16,44 @@
   </head>
 
   <body>
+
     <div id="balloon"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="balloon.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        let size = 200;
+        let colors = ["red", "green", "blue"];
+        let i = 0;
+
+        // คลิก → โตขึ้นทีละ 10
+        $("#balloon").click(function () {
+          size += 10;
+          i = (i + 1) % 3;
+
+          if (size > 420) size = 200;
+
+          $(this).css({
+            width: size + "px",
+            height: size + "px",
+            backgroundColor: colors[i]
+          });
+        });
+
+        // เอาเมาส์ออก → เล็กลงทีละ 5
+        $("#balloon").mouseleave(function () {
+          size -= 5;
+
+          if (size < 200) size = 200;
+
+          $(this).css({
+            width: size + "px",
+            height: size + "px"
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>
